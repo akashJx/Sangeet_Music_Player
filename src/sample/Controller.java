@@ -126,27 +126,22 @@ public class Controller  implements Initializable {
                     success = true;
                     String filePath = null;
                     for (File file:db.getFiles()) {
-                        filePath = file.getAbsolutePath(); // ABSOLUTE FILE PATH44
+                        filePath = file.getAbsolutePath(); // ABSOLUTE FILE PATH
 
                         if(file!=null && playBtatus == MediaPlayer.Status.PLAYING){
-                            System.out.println(" THIS SHOULD WORK ");
-                            // && mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING
-                            mediaPlayer.stop();
+                            System.out.println(" PLAYBACK STATUS CHECKED ");
+                              mediaPlayer.stop();
                         }
 
-
                         play_back_status = 1;
-                        //-----------------------------
+                   
                         playpauseImg.setImage(pauseImg);
                         lovedIt.setImage(blackHeart);
                         BIGLOGO.setImage(RedLogo);
                         //-----------------------------
 
                         songpath = filePath;
-
-                       //  Media song = new Media(new File(filePath).toURI().toString());
                         songList.put(i++,songpath);
-                       //  playthis(song);
                         playthisSong(songpath);
 
                         volumeSlider.setValue(mediaPlayer.getVolume() * 100);
@@ -274,33 +269,20 @@ public class Controller  implements Initializable {
                totalTimeOfMusic = song.getDuration().toSeconds();
                System.out.println("TOTAL DURATION OF SONG: " + totalTimeOfMusic);
 
-               /* for (Map.Entry<String, Object> entry : song.getMetadata().entrySet()){
+               /* // To get the metaData out of the song.
+               for (Map.Entry<String, Object> entry : song.getMetadata().entrySet()){
                    System.out.println(entry.getKey() + ": " + entry.getValue());
-               }*/
+               }
+               */
 
                songName = (String) song.getMetadata().get("title");
                myPlayerNotification(songName);
                notifications.show();
 
                songNameList.put(j++,songName);
-               //  System.out.println("SONG NAME : " + songName);
-
-        /*       Duration CurrentTime = mediaPlayer.getCurrentTime();
-               currentTime.setText(formatDuration(CurrentTime));*/
-
-               /*totalDuration = mediaPlayer.getTotalDuration();
-               totalTimeLabel.setText(formatDuration(totalDuration));*/
-
                mediaPlayer.play();
-               // --@Notification Part----------------
-
            }
        });
-
-      /* mediaPlayer.currentCountProperty().addListener((Observable)->{
-           Duration CurrentTime = mediaPlayer.getCurrentTime();
-           currentTime.setText(formatDuration(CurrentTime));
-       });*/
 
         playBtatus = MediaPlayer.Status.PLAYING;
 
@@ -312,7 +294,6 @@ public class Controller  implements Initializable {
         mediaPlayer = new MediaPlayer(newsong);
         System.out.println("FILE INPUT SUCESSFULL.!!" + songpath);
         mediaPlayer.play();
-        // playing = mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
         playBtatus = MediaPlayer.Status.PLAYING;
         System.out.println("MEDIAPLAYER STATUS : " + playBtatus );
     }
@@ -342,7 +323,6 @@ public class Controller  implements Initializable {
 
 
 } //--@End of Controller------------------------------------
-//-------DON'T WRITE CODE BELOW------------------------------
 
 // TODO MAKE A PLAYBACK SEEKER SLIDER
 // TODO MAKE CURRENT DURATION AND TOTAL DURATION LABEL
