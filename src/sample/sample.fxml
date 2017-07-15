@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="670.0" style="-fx-background-color: #42444a;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+        <children>
+                <AnchorPane fx:id="topAnchorPane" prefHeight="70.0" prefWidth="670.0" style="-fx-background-color: #1e2024;">
+                        <children>
+                                <Circle fill="#e54545" layoutX="650.0" layoutY="19.0" radius="7.0" stroke="#e54545" strokeType="INSIDE" />
+                                <Circle fill="#ffd02c" layoutX="629.0" layoutY="19.0" radius="7.0" stroke="#ffd02c" strokeType="INSIDE" />
+                                <Label fx:id="closeButton" layoutX="643.0" layoutY="11.0" onMouseClicked="#closeButton" prefHeight="17.0" prefWidth="14.0" />
+                                <Label fx:id="minimizeButton" layoutX="622.0" layoutY="11.0" prefHeight="17.0" prefWidth="14.0" />
+            <ImageView fitHeight="57.0" fitWidth="66.0" layoutX="19.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" rotate="164.2">
+               <image>
+                  <Image url="@../iconsImages/MusicRecord_96.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="30.0" layoutX="58.0" layoutY="17.0" opacity="0.93" pickOnBounds="true" preserveRatio="true" rotate="-162.3">
+               <image>
+                  <Image url="@../iconsImages/MR_i48.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="596.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconsImages/icons8-GitHub-25.png" />
+               </image>
+            </ImageView>
+                        </children>
+                </AnchorPane>
+                <AnchorPane layoutY="409.0" prefHeight="5.0" prefWidth="670.0" style="-fx-background-color: #1e2024;" />
+                <AnchorPane layoutX="285.0" layoutY="399.0" opacity="0.5" prefHeight="70.0" prefWidth="3.0" style="-fx-background-color: #1e2024;" />
+                <AnchorPane layoutX="362.0" layoutY="400.0" opacity="0.5" prefHeight="70.0" prefWidth="3.0" style="-fx-background-color: #1e2024;" />
+                <ImageView fx:id="playpauseImg" fitHeight="38.0" fitWidth="38.0" layoutX="306.0" layoutY="424.0" onMouseClicked="#changePlayPauseImg" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                                <Image url="@../iconsImages/icons8_Play_96.png" />
+                        </image>
+                </ImageView>
+                <ImageView fitHeight="38.0" fitWidth="60.0" layoutX="383.0" layoutY="423.0" onMouseClicked="#nextSong" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                                <Image url="@../iconsImages/NextSong.png" />
+                        </image>
+                </ImageView>
+                <ImageView fitHeight="38.0" fitWidth="55.0" layoutX="224.0" layoutY="423.0" onMouseClicked="#prevSong" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                                <Image url="@../iconsImages/PrevSong.png" />
+                        </image>
+                </ImageView>
+      <Text fx:id="playerName" fill="#c6b6b6" fontSmoothingType="LCD" layoutX="91.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sangeet">
+         <font>
+            <Font name="Samarkan      Normal" size="57.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="musicDDpane" layoutX="143.0" layoutY="90.0" opacity="0.29" prefHeight="283.0" prefWidth="377.0" style="-fx-background-color: #151515;">
+         <children>
+            <ImageView fx:id="BIGLOGO" fitHeight="150.0" fitWidth="200.0" layoutX="114.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../iconsImages/BIGLOGO.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="nowPlaying" layoutY="225.0" prefHeight="47.0" prefWidth="378.0" textFill="#c6b6b6" />
+         </children>
+      </AnchorPane>
+      <JFXSlider fx:id="volumeSlider" layoutX="553.0" layoutY="434.0" prefHeight="14.0" prefWidth="97.0" stylesheets="@../JFXSlider.css" value="80.0" />
+      <ImageView fx:id="volumeIco" fitHeight="24.0" fitWidth="38.0" layoutX="529.0" layoutY="428.0" onMouseClicked="#changeVolico" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../iconsImages/volicon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lovedIt" fitHeight="31.0" fitWidth="38.0" layoutX="23.0" layoutY="427.0" onMouseClicked="#LovedItClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../iconsImages/heartBlack.png" />
+         </image>
+      </ImageView>
+        </children>
+</Pane>

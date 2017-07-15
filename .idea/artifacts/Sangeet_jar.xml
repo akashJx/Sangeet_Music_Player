@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Sangeet:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Sangeet_jar</output-path>
+    <root id="archive" name="Sangeet.jar">
+      <element id="module-output" name="Sangeet" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../controlsfx-8.40.12.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../jfoenix.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
